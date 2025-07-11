@@ -146,6 +146,18 @@ section { padding: var(--section-padding); }
   transform: translateY(-5px);
   box-shadow: var(--shadow-md);
 }
+.col-lg-6.text-center {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--brand-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;   /* separate it from what's below */
+}
 .experience-badge {
   width: 160px; height: 160px;
   background: linear-gradient(45deg, var(--brand-primary), var(--brand-secondary));
@@ -460,6 +472,16 @@ section { padding: var(--section-padding); }
   .btn-primary { width:100%; margin-top:1rem; }
   .hero { height:80vh; padding:0 1rem; }
   .hero-content h1 { font-size:2.2rem; }
+  /* refine the experince-badge to be responsive */
+    .experience-badge {
+    width: 140px;
+    height: 140px;
+    border-radius: 0.8rem;
+    padding: 0.5rem;
+  }
+  .experience-badge .display-4 { font-size: 2rem; }
+  .experience-badge small { font-size: 0.8rem; }
+  /* end of experince-badge */
   .about-card, .stat-card, .team-member-card { margin-bottom:1.5rem; }
   .map-wrapper { flex-direction:column; margin-top:4rem; }
   .map-legend { width:100%; margin-top:2rem; }
@@ -473,6 +495,16 @@ section { padding: var(--section-padding); }
 @media (max-width: 576px) {
   .hero { height:75vh; }
   .hero-content h1 { font-size:1.8rem; line-height:1.3; }
+    /* refine the experince-badge to be responsive */
+  .experience-badge {
+    width: 120px;
+    height: 120px;
+    border-radius: 0.75rem;
+    padding: 0.4rem;
+  }
+  .experience-badge .display-4 { font-size: 1.6rem; }
+  .experience-badge small { font-size: 0.75rem; }
+  /* end of experince-badge */
   .section-title { font-size:2rem; }
   .section-title:after { margin:0.5rem auto; }
   .stat-number { font-size:2rem; }
