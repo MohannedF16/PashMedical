@@ -242,9 +242,7 @@ section { padding: var(--section-padding); }
   }
 }
 
-/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––  
-  SECTION TITLES
-–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* SECTION TITLES */
 .section-title {
   font-family: "Poppins", sans-serif;
   font-size: 2.5rem; font-weight: 700;
@@ -295,9 +293,7 @@ section { padding: var(--section-padding); }
   transform: scale(1.05) rotate(-5deg);
 }
 
-/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––  
-  STATS GRID
-–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* STATS GRID */
 .coverage-stats,
 .stats-grid {
   display: grid;
@@ -558,9 +554,7 @@ section { padding: var(--section-padding); }
 .slider-prev { left:1rem; }
 .slider-next { right:1rem; }
 
-/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––  
-  CONTACT & FOOTER
-–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* CONTACT & FOOTER */
 .contact-form {
   max-width:600px; margin:0 auto;
   background:#fff; padding:2rem; border-radius:1rem;
@@ -719,9 +713,7 @@ section { padding: var(--section-padding); }
 }
 
 
-/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––  
-  BACK TO TOP
-–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* BACK TO TOP */
 .back-to-top {
   position:fixed; bottom:30px; right:30px;
   width:50px; height:50px; border-radius:50%;
@@ -733,17 +725,13 @@ section { padding: var(--section-padding); }
 .back-to-top.visible { opacity:1; transform:translateY(0); }
 .back-to-top:hover { background:var(--brand-secondary); transform:translateY(-5px); }
 
-/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––  
-  FORM CONTROLS & TOUCH
-–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* FORM CONTROLS & TOUCH */
 .form-control,
 .form-select { font-size:1rem; padding:1rem; }
 .form-floating label { padding:1rem; }
 .nav-link, .btn, .state, .slider-control, .job-link { touch-action: manipulation; }
 
-/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––  
-  RESPONSIVE BREAKPOINTS
-–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* RESPONSIVE BREAKPOINTS */
 /* Tablet ≤992px */
 @media (max-width: 992px) {
   .navbar-logo { height: 150px; }
