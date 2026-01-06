@@ -279,13 +279,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Form submission
-  document.querySelector('form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Thank you for your message! We will contact you soon.');
-    this.reset();
-  });
-
   // Job slider navigation with auto-slide
   const sliderTrack = document.querySelector('.slider-track');
   const sliderPrev = document.querySelector('.slider-prev');
@@ -341,6 +334,71 @@ document.addEventListener('DOMContentLoaded', function() {
           sliderPrev.addEventListener('mouseleave', startAutoSlide);
           sliderNext.addEventListener('mouseleave', startAutoSlide);
       }
+  }
+  
+  // Contact Form Submission Handler
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById('submitBtn');
+      const formMessage = document.getElementById('formMessage');
+      const originalBtnText = submitBtn.innerHTML;
+      
+      // Disable button and show loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i> Sending...';
+      
+      // Collect form data
+      const formData = new FormData(contactForm);
+      
+      // Send form data
+      fetch('send-email.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // Show success message
+          formMessage.style.display = 'block';
+          formMessage.className = 'alert alert-success';
+          formMessage.innerHTML = '<i class="bi bi-check-circle me-2"></i>' + data.message;
+          
+          // Reset form
+          contactForm.reset();
+          
+          // Re-enable button
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+          
+          // Hide message after 5 seconds
+          setTimeout(() => {
+            formMessage.style.display = 'none';
+          }, 5000);
+        } else {
+          // Show error message
+          formMessage.style.display = 'block';
+          formMessage.className = 'alert alert-danger';
+          formMessage.innerHTML = '<i class="bi bi-exclamation-circle me-2"></i>' + data.message;
+          
+          // Re-enable button
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        formMessage.style.display = 'block';
+        formMessage.className = 'alert alert-danger';
+        formMessage.innerHTML = '<i class="bi bi-exclamation-circle me-2"></i>An error occurred. Please try again later.';
+        
+        // Re-enable button
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      });
+    });
   }
   
 });

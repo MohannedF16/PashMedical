@@ -626,22 +626,22 @@
       <div class="container">
         <h2 class="section-title">Get Started</h2>
         <div class="contact-form">
-          <form class="row g-3">
+          <form id="contactForm" class="row g-3" method="POST" action="send-email.php">
             <div class="col-md-6">
               <div class="form-floating">
-                <input type="text" class="form-control" id="fullName" placeholder="Full Name" required>
+                <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name" required>
                 <label for="fullName">Full Name</label>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-floating">
-                <input type="email" class="form-control" id="email" placeholder="Email Address" required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
                 <label for="email">Email Address</label>
               </div>
             </div>
             <div class="col-12">
               <div class="form-floating">
-                <select class="form-select" id="interest" required>
+                <select class="form-select" id="interest" name="interest" required>
                   <option selected disabled>Select an option</option>
                   <option>Training Programs</option>
                   <option>Community Workshops</option>
@@ -653,14 +653,15 @@
             </div>
             <div class="col-12">
               <div class="form-floating">
-                <textarea class="form-control" placeholder="Message" id="message" style="height: 140px" required></textarea>
+                <textarea class="form-control" placeholder="Message" id="message" name="message" style="height: 140px" required></textarea>
                 <label for="message">Message</label>
               </div>
             </div>
             <div class="col-12 text-center">
-              <button type="submit" class="btn btn-primary px-5 py-3">
+              <button type="submit" class="btn btn-primary px-5 py-3" id="submitBtn">
                 <i class="bi bi-send-fill me-2"></i> Send Message
               </button>
+              <div id="formMessage" style="margin-top: 15px; display: none;"></div>
             </div>
           </form>
         </div>
