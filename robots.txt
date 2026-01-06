@@ -1,0 +1,16 @@
+# Robots.txt for Pash Medical Solutions
+User-agent: *
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Disallow private areas
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://pashmedinnov.com/sitemap.xml
+
+# Crawl delay (optional - adjust as needed)
+Crawl-delay: 1

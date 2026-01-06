@@ -213,64 +213,71 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // Initialize Pie Chart
-  const ctx = document.getElementById('coverage-chart').getContext('2d');
-  const coverageChart = new Chart(ctx, {
-    type: 'pie',
-    data: {
-      labels: ['Covered States', 'Uncovered States'],
-      datasets: [{
-        label: 'Sudan Coverage',
-        data: [8, 10],
-        backgroundColor: [
-          'rgba(76, 175, 80, 0.8)',
-          'rgba(224, 224, 224, 0.8)'
-        ],
-        borderColor: [
-          'rgba(76, 175, 80, 1)',
-          'rgba(224, 224, 224, 1)'
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          position: 'bottom',
-          labels: {
-            font: {
-              size: 14
-            },
-            padding: 20
-          }
+  const chartCanvas = document.getElementById('coverage-chart');
+  if (chartCanvas) {
+    const ctx = chartCanvas.getContext('2d');
+    const coverageChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Covered States', 'Uncovered States'],
+        datasets: [{
+          label: 'Sudan Coverage',
+          data: [8, 10],
+          backgroundColor: [
+            'rgba(76, 175, 80, 0.8)',
+            'rgba(224, 224, 224, 0.8)'
+          ],
+          borderColor: [
+            'rgba(76, 175, 80, 1)',
+            'rgba(224, 224, 224, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: {
+          animateRotate: true,
+          animateScale: false
         },
-        tooltip: {
-          callbacks: {
-            label: function(context) {
-              const label = context.label || '';
-              const value = context.parsed || 0;
-              const total = context.dataset.data.reduce((a, b) => a + b, 0);
-              const percentage = Math.round((value / total) * 100);
-              return `${label}: ${value} states (${percentage}%)`;
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              font: {
+                size: 14
+              },
+              padding: 20
             }
-          }
-        },
-        title: {
-          display: true,
-          text: 'Sudan State Coverage',
-          font: {
-            size: 18,
-            weight: 'bold'
           },
-          padding: {
-            top: 10,
-            bottom: 20
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                const label = context.label || '';
+                const value = context.parsed || 0;
+                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                const percentage = Math.round((value / total) * 100);
+                return `${label}: ${value} states (${percentage}%)`;
+              }
+            }
+          },
+          title: {
+            display: true,
+            text: 'Sudan State Coverage',
+            font: {
+              size: 18,
+              weight: 'bold'
+            },
+            padding: {
+              top: 10,
+              bottom: 20
+            }
           }
         }
       }
-    }
-  });
+    });
+  }
   
   // Form submission
   document.querySelector('form').addEventListener('submit', function(e) {
