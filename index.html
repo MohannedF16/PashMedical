@@ -6,6 +6,9 @@
   <title>Pash Medical Solutions</title>
   <meta name="description" content="Healthcare e-learning platform offering courses, workshops, and certifications." />
   <meta name="author" content="Pash Medical Solutions" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="images/logo.jpg">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -25,10 +28,12 @@
     <div class="container">
       <!-- Logo Integration -->
       <div class="brand-wrapper">
-        <img src="images/logo.jpg" alt="Pash Medical Solutions Logo" class="navbar-logo">
+        <a href="#hero" class="d-flex align-items-center gap-2 text-decoration-none">
+          <img src="images/logo.jpg" alt="Pash Medical Solutions Logo" class="navbar-logo">
+        </a>
       </div>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
@@ -43,7 +48,7 @@
         </ul>
       
         <!-- Dropdown: Tools & Platforms -->
-        <div class="nav-item dropdown">
+        <div class="nav-item dropdown ms-2">
           <button
             class="btn btn-primary dropdown-toggle"
             type="button"
@@ -54,9 +59,9 @@
           <i class="bi bi-collection"></i> Tools &amp; Platforms
           </button>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="toolsDropdown">
-            <li><a class="dropdown-item" href="https://www.facebook.com/profile.php?id=61576189602965" target="_blank">MedPash</a></li>
-            <li><a class="dropdown-item" href="https://www.facebook.com/profile.php?id=61575751047288" target="_blank">PashCare</a></li>
-            <li><a class="dropdown-item" href="https://www.facebook.com/profile.php?id=100089634399774" target="_blank">NursesPash</a></li>
+            <li><a class="dropdown-item" href="https://www.facebook.com/profile.php?id=61576189602965" target="_blank"><i class="bi bi-app-indicator me-2"></i>MedPash</a></li>
+            <li><a class="dropdown-item" href="https://www.facebook.com/profile.php?id=61575751047288" target="_blank"><i class="bi bi-heart-pulse me-2"></i>PashCare</a></li>
+            <li><a class="dropdown-item" href="https://www.facebook.com/profile.php?id=100089634399774" target="_blank"><i class="bi bi-nurse me-2"></i>NursesPash</a></li>
           </ul>
         </div>
       </div>
@@ -590,76 +595,78 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <div class="row g-4">
-        <div class="col-md-4">
-          <h5>Contact</h5>
+      <!-- Footer Top Section -->
+      <div class="row g-5 mb-4">
+        <!-- Brand Section -->
+        <div class="col-md-4 footer-section">
+          <img src="images/logo.jpg" alt="Pash Medical Solutions Logo" class="footer-logo">
+          <p class="mb-3">
+            Pash Medical Solutions is committed to advancing medical education through innovative technology and healthcare solutions.
+          </p>
+          <p class="small mb-0">
+            <strong>Innovating Healthcare</strong> for a better future in Sudan and beyond.
+          </p>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="col-md-4 footer-section">
+          <h5><i class="bi bi-telephone me-2"></i>Contact Us</h5>
           <ul class="list-unstyled">
-           <li>
-            <i class="bi bi-envelope me-2"></i>
-              <a href="mailto:pashmedicalsolutions@gmail.com">Email</a>
+            <li>
+              <i class="bi bi-envelope me-2"></i>
+              <a href="mailto:pashmedicalsolutions@gmail.com">pashmedicalsolutions@gmail.com</a>
             </li>
             <li>
-              <i class="bi bi-phone me-2"></i>
+              <i class="bi bi-telephone me-2"></i>
               <a href="tel:+249905948937">+249 (905) 948-937</a>
             </li>
             <li>
-              <i class="bi bi-geo-alt me-2"></i>Sudan,
-              Port Sudan, PS
+              <i class="bi bi-geo-alt me-2"></i>
+              <span>Port Sudan, Sudan</span>
             </li>
           </ul>
         </div>
-        <div class="col-md-4">
-          <h5>Quick Links</h5>
+
+        <!-- Quick Links Section -->
+        <div class="col-md-4 footer-section">
+          <h5><i class="bi bi-link-45deg me-2"></i>Quick Links</h5>
           <ul class="list-unstyled">
-            <li>
-              <a href="#about" class="text-decoration-none" style="color:green">About Us</a>
-            </li>
-            <li>
-              <a href="#statistics" class="text-decoration-none" style="color:green">Statistics</a>
-            </li>
-            <li>
-              <a href="#coverage" class="text-decoration-none" style="color:green">Coverage</a>
-            </li>
-            <li>
-              <a href="#team" class="text-decoration-none" style="color:green">
-                Meet Our Team
-              </a>
-            </li>
-            <li>
-              <a href="#openings" class="text-decoration-none" style="color:green">Careers</a>
-            </li>
-            <li>
-              <a href="#contact" class="text-decoration-none" style="color:green">Contact</a>
-            </li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#statistics">Statistics</a></li>
+            <li><a href="#coverage">Coverage</a></li>
+            <li><a href="#team">Meet Our Team</a></li>
+            <li><a href="#openings">Careers</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-        <div class="col-md-4">
-          <h5>Follow Us</h5>
+      </div>
+
+      <!-- Footer Social Section -->
+      <hr class="my-4" />
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-3 mb-md-0">
+          <h5 class="mb-3"><i class="bi bi-share me-2"></i>Follow Us</h5>
           <div class="d-flex gap-3">
-            <a href="#" class="text-decoration-none fs-4 text-dark">
+            <a href="#" title="Facebook">
               <i class="bi bi-facebook"></i>
             </a>
-            <a href="https://www.linkedin.com/company/nurses-pash" target="_blank" class="text-decoration-none fs-4 text-dark">
+            <a href="https://www.linkedin.com/company/nurses-pash" target="_blank" title="LinkedIn">
               <i class="bi bi-linkedin"></i>
             </a>
-            <a href="#" class="text-decoration-none fs-4 text-dark">
+            <a href="#" title="Instagram">
               <i class="bi bi-instagram"></i>
             </a>
-            <a href="#" class="text-decoration-none fs-4 text-dark">
+            <a href="#" title="Twitter">
               <i class="bi bi-twitter"></i>
             </a>
           </div>
-          <div class="mt-4">
-            <h5>Innovating Healthcare</h5>
-            <p class="small">
-              Pash Medical Solutions is committed to advancing medical
-              education through technology.
-            </p>
-          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="col-md-6 text-md-end">
+          <p class="text-muted mb-0">© 2025 Pash Medical Solutions. All rights reserved.</p>
         </div>
       </div>
-      <hr class="my-4" />
-      <p class="text-center text-muted mb-0">© 2025 Pash Medical Solutions. All rights reserved.</p>
     </div>
   </footer>
 
